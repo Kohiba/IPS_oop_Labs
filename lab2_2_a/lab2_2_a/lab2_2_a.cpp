@@ -32,7 +32,7 @@ bool checkInput(int argc, char * argv[], int  & temp)
 	{
 		if ((temp < 0) || (temp > 255))
 		{
-			printf("Alert! Parameter < 0  or > 255");
+			printf("Alert! Parameter < 0  or > 255\n");
 			return false;
 		}
 	}
