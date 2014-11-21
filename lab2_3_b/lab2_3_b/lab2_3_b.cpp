@@ -31,25 +31,25 @@ bool ReadMatrix(const char *fileName, matrix & m)
 	char load_string[200];
 	int i = 0;
 	int j = 0;
-	char *next;
+	char *next = NULL;
+	char* token = NULL;
+	char delims[] = " ,\t\r\n";
 	bool isNotNum = false;
 
 	while (fgets(load_string, sizeof(load_string), pFile))
 	{
-		cout << load_string << endl;
-	    char *str = strtok_s(load_string, "	", &next);
-		do
+		token = strtok_s(load_string, delims, &next);
+		while (token != NULL)
 		{
-			m[i][j] = StringToDouble(str, isNotNum);
-			/*if (!isNotNum)
+			m[i][j] = StringToDouble(token, isNotNum);
+			if (isNotNum)
 			{
 				cout << "error! Is not numeric" << endl;
 				return false;
-			}*/
+			}
 			j++;
-			
-		}
-		while (str = strtok_s(NULL, " ", &next));
+			token = strtok_s(NULL, delims, &next);
+		};		
 		i++;
 		j = 0;
 	}
@@ -64,9 +64,9 @@ void MatrixMultiplication(const matrix m1, const matrix m2, matrix & rezm)
 		{
 			for (int inner = 0; inner < 3; inner++)
 			{
-				rezm[row][col] += m1[row][inner] * m2[inner][col];
-				cout << m1[row][inner] << " : " << m2[inner][col] << " : " << rezm[row][col] << endl;
-				//printf("%f : %f : %f", m1[row][inner], m2[inner][col], rezm[row][col]);
+				//cout << rezm[row][col] << " + ";
+				rezm[row][col] = rezm[row][col] + (m1[row][inner] * m2[inner][col]);
+				//cout << m1[row][inner] << " * " << m2[inner][col] << " = " << rezm[row][col] << endl;
 			}
 		}
 	}
@@ -77,8 +77,8 @@ void OutputMatrix(const matrix m)
 	{
 		for (int j = 0; j <= 2; j++)
 		{
-			//printf("%f", m[i][j]);
-			cout << setw(6) << setprecision(3) << m[i][j] << " ";
+			printf("%10.3f", m[i][j]);
+			//cout << setw(6) << setprecision(3) << m[i][j] << " ";
 		}
 		cout << endl;
 	}
@@ -91,14 +91,14 @@ int main(int argc, char* argv[])
 		cout << "error. NOT parameters" << endl << "for example : input1.txt input2.txt " << endl;
 		return 1;
 	}
-	matrix m1, m2;
+	matrix m1 = {0};
+	matrix m2 = {0};
 	if (!ReadMatrix(argv[1], m1) || !ReadMatrix(argv[2], m2))
 	{
 		return 1;
 	}
-	matrix resultMatrix;
+	matrix resultMatrix = {0};
 	MatrixMultiplication(m1, m2, resultMatrix);
-	cout << endl << endl;
 	OutputMatrix(resultMatrix);
     return 0;
 }
