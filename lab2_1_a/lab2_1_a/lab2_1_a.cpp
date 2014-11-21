@@ -2,6 +2,7 @@
 //
 
 #include "stdafx.h"
+#include "fstream"
 #include "stdio.h"
 #include "iostream"
 #include "errno.h"
@@ -9,7 +10,7 @@
 
 using namespace std;
 
-bool DoCheckParameter(int argc, char * argv[], FILE **pFile)
+bool DoCheckParameter(int argc, char * argv[])
 {
 	if (argc <= 1)
 	{
@@ -26,13 +27,6 @@ bool DoCheckParameter(int argc, char * argv[], FILE **pFile)
 		return false;
 	}
 	
-	errno_t err = fopen_s(pFile, pArg, "rb");
-	if (err)
-	{
-		cout << "error! Fail specified was not found" << endl;
-		return false;
-	}
-	
 	pArg = argv[2];
 	if ((pArg == NULL) || strcmp(pArg, "") == 0)
 	{
@@ -41,26 +35,17 @@ bool DoCheckParameter(int argc, char * argv[], FILE **pFile)
 	}
 	return true;
 }
-
-int main(int argc, char* argv[])
+bool SearchStringInFile(const string & searchString, char * fileName)
 {
-	setlocale(LC_ALL, ".1251");
-	FILE *fileName = NULL;
-	if (!DoCheckParameter(argc, argv, &fileName))
-	{
-		return 1;
-	}
-	
-	char line[256];
-	char *fStr = argv[2];
+	ifstream strm(fileName);
+	string line;
 	int i = 1;
 	bool stringIsFound = false;
-	while (fgets(line, sizeof(line), fileName))
+	while (getline(strm, line))
 	{
-		char *checkSearch = strstr(line, fStr);
-		if (checkSearch != NULL)
+		if (line.find(searchString) != string::npos)
 		{
-			cout << "Line: \"" << fStr << "\" found in line ¹ " << i << endl;
+			cout << "Line: \"" << searchString << "\" found in line ¹ " << i << endl;
 			stringIsFound = true;
 		}
 		i++;
@@ -68,9 +53,20 @@ int main(int argc, char* argv[])
 	if (!stringIsFound)
 	{
 		cout << "Text not found" << endl;
-		return 1;
+		return false;
 	}
-	fclose(fileName); 
-	return 0;
+	return true;
 }
 
+int main(int argc, char* argv[])
+{
+	if (!DoCheckParameter(argc, argv))
+	{
+		return 1;
+	}
+	if (!SearchStringInFile(argv[2], argv[1]))
+	{
+		return 1;
+	}
+	return 0;
+}
