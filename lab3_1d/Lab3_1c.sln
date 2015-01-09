@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ApplicationVectorProcessor", "ApplicationVectorProcessor\ApplicationVectorProcessor.vcxproj", "{CF523A6E-8761-46FF-A2D0-4F159C0B99B9}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TestVectorProcessor", "TestVectorProcessor\TestVectorProcessor.vcxproj", "{6A084030-422E-4DC8-B6F7-B696ECB922F1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CF523A6E-8761-46FF-A2D0-4F159C0B99B9}.Debug|Win32.ActiveCfg = Debug|Win32
+		{CF523A6E-8761-46FF-A2D0-4F159C0B99B9}.Debug|Win32.Build.0 = Debug|Win32
+		{CF523A6E-8761-46FF-A2D0-4F159C0B99B9}.Release|Win32.ActiveCfg = Release|Win32
+		{CF523A6E-8761-46FF-A2D0-4F159C0B99B9}.Release|Win32.Build.0 = Release|Win32
+		{6A084030-422E-4DC8-B6F7-B696ECB922F1}.Debug|Win32.ActiveCfg = Debug|Win32
+		{6A084030-422E-4DC8-B6F7-B696ECB922F1}.Debug|Win32.Build.0 = Debug|Win32
+		{6A084030-422E-4DC8-B6F7-B696ECB922F1}.Release|Win32.ActiveCfg = Release|Win32
+		{6A084030-422E-4DC8-B6F7-B696ECB922F1}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
