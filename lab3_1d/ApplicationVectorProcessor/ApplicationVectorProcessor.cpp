@@ -32,6 +32,7 @@ int main()
 	VectorOfDouble arr;
 	ReadVector(arr);
 	VectorModificator(arr);
+	sort(arr.begin(), arr.end());
 	WriteVector(arr);
 	return 0;
 }
