@@ -4,8 +4,8 @@
 #include "stdafx.h"
 #include "RemoveSpace.h"
 #include "boost/optional.hpp"
-#include "iostream" 
-#include "string"
+#include <iostream>
+#include <string>
 
 using namespace std; 
 

@@ -1,5 +1,5 @@
 #include "stdafx.h"
-#include "string"
+#include <string>
 
 using namespace std;
 string RemoveExtraSpaces(string const& arg);

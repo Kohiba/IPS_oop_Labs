@@ -3,7 +3,7 @@
 
 #include "stdafx.h"
 #include "../ApplicationVectorProcessor/VectorProcessor.h"
-#include "vector"
+#include <vector>
 
 using namespace std;
 

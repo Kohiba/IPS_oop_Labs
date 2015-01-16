@@ -3,13 +3,15 @@
 
 
 #include "stdafx.h"
-#include "iostream"
+#include "VectorProcessor.h"
+#include "boost/optional.hpp"
+#include <iostream>
 #include <vector>
 #include <algorithm>
 #include <functional>
 #include <iterator>
 #include "boost/optional.hpp"
-#include "VectorProcessor.h"
+
 
 
 using namespace std;

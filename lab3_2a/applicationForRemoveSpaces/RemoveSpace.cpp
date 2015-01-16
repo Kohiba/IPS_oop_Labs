@@ -1,10 +1,12 @@
 #include "stdafx.h"
-#include "string"
+#include <string>
 
 using namespace std;
 string RemoveExtraSpaces(string const& arg)
 {
+	size_t lenArg = arg.length();
 	string str;
+	str.reserve(lenArg);
 	if (!arg.empty())
 	{
 		int posStart = arg.find_first_not_of(" ");
@@ -12,7 +14,7 @@ string RemoveExtraSpaces(string const& arg)
 		{
 			while (posStart != string::npos)
 			{
-				int posEnd = arg.find_first_of(" ", posStart);
+				size_t posEnd = arg.find_first_of(" ", posStart);
 				str.append(arg.substr(posStart, posEnd - posStart));
 				str.append(" ");
 				posEnd = arg.find_first_not_of(" ", posEnd);
