@@ -4,12 +4,11 @@
 using namespace std;
 string RemoveExtraSpaces(string const& arg)
 {
-	size_t lenArg = arg.length();
 	string str;
-	str.reserve(lenArg);
+	str.reserve(arg.length());
 	if (!arg.empty())
 	{
-		int posStart = arg.find_first_not_of(" ");
+		size_t posStart = arg.find_first_not_of(" ");
 		if (posStart != string::npos)
 		{
 			while (posStart != string::npos)

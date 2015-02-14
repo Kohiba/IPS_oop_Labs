@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ApplicationFrequencyOfOccurrenceOfWords", "ApplicationFrequencyOfOccurrenceOfWords\ApplicationFrequencyOfOccurrenceOfWords.vcxproj", "{DFAF7E5D-DC07-45F1-BD5C-6F7BEA667BB3}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TestOccurrenceOfWords", "TestOccurrenceOfWords\TestOccurrenceOfWords.vcxproj", "{F96FC2DC-E029-4245-B601-4D415E0EFE9D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DFAF7E5D-DC07-45F1-BD5C-6F7BEA667BB3}.Debug|Win32.ActiveCfg = Debug|Win32
+		{DFAF7E5D-DC07-45F1-BD5C-6F7BEA667BB3}.Debug|Win32.Build.0 = Debug|Win32
+		{DFAF7E5D-DC07-45F1-BD5C-6F7BEA667BB3}.Release|Win32.ActiveCfg = Release|Win32
+		{DFAF7E5D-DC07-45F1-BD5C-6F7BEA667BB3}.Release|Win32.Build.0 = Release|Win32
+		{F96FC2DC-E029-4245-B601-4D415E0EFE9D}.Debug|Win32.ActiveCfg = Debug|Win32
+		{F96FC2DC-E029-4245-B601-4D415E0EFE9D}.Debug|Win32.Build.0 = Debug|Win32
+		{F96FC2DC-E029-4245-B601-4D415E0EFE9D}.Release|Win32.ActiveCfg = Release|Win32
+		{F96FC2DC-E029-4245-B601-4D415E0EFE9D}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
